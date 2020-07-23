@@ -45,7 +45,7 @@ Separated agreement rate of each day of all the raters.
 (df[['Date Column','Three Label Agreement', 'Five Label Agreement']].groupby('Date Column')
  .mean().plot(title = 'Agreement Rate Separated', kind = 'bar'))
  ```
-!(https://github.com/JennyLuc/Data-Challenge/graphs/agreement_rate_each_day_separated.png)
+![Agreement Rate Separated](https://github.com/JennyLuc/Data-Challenge/blob/master/graphs/agreement_rate_each_day_separated.png)
  
  Combined Agreement rate of each day of all the raters.
  
@@ -54,4 +54,4 @@ label_mean_df = df[['Date Column','Three Label Agreement', 'Five Label Agreement
 total = label_mean_df.mean(axis =1)
 total.plot(title = 'Agreement Rate', kind = 'bar')
 ```
-!(https://github.com/JennyLuc/Data-Challenge/graphs/agreementrateeachday.png)
+!(https://github.com/JennyLuc/Data-Challenge/blob/master/graphs/agreementrateeachday.png)
