@@ -112,7 +112,7 @@ Week |Three Label Agreement Rate|  Five Label Agreement Rate
 10-17-05 to 10-23-05 | 0.328874    |  0.205006
 10-24-05 to 10-30-05 | 0.307990    |  0.198024
 
-![seaparted_weekly_agreement_rate] (https://github.com/JennyLuc/Data-Challenge/blob/master/graphs/weeklyagreementrate.png)
+![seaparted_weekly_agreement_rate](https://github.com/JennyLuc/Data-Challenge/blob/master/graphs/weeklyagreementrate.png)
 
 #### Combined Ratings
 ```
@@ -128,7 +128,7 @@ Week | Agreement Rate
 10-17-05 to 10-23-05 |   0.266940
 10-24-05 to 10-30-05 |   0.253007
 
-![Combined Agreement Rating] (https://github.com/JennyLuc/Data-Challenge/blob/master/graphs/test.png)
+![Combined Agreement Rating](https://github.com/JennyLuc/Data-Challenge/blob/master/graphs/test.png)
 
 ### 3. Identify raters that have the highest agreement rates with the engineer.
 ```
@@ -192,7 +192,7 @@ Great	|0.197864
 Intermediate	|0.195829
 Okay	|0.199898
 
-### 7. What is the recall for each of the 3 labels?
+###7. What is the recall for each of the 3 labels?
 ```
 ratings_grouped_3 = df[['Rater Answer 3 Label', 'Three Label Agreement']].groupby('Rater Answer 3 Label').sum()
 recall_average = (ratings_grouped_3.loc[(ratings_grouped_3.index == "Average")]['Three Label Agreement'][0]/
@@ -208,3 +208,30 @@ Three Label Agreement| Recall
 Low	|0.333855
 Average	|0.321954
 High	|0.344190
+
+###What approaches do you recommend you need to take to improve your metrics, if the metric has not met engineering standards?
+
+Approaches that should be done is to ensure raters and engineers are on the same page on forming their results and conclusions. Because there is such a wide disparity between the ratings done by raters and ratings done by engineers, it shows that there are differences in how engineers and raters conclude their answers. 
+Another idea for raters to have a higher matches of ratings is to have the engineers and raters collaboratively rate a couple of samples before splitting them off to rate separately.
+Through this method, engineers are able to see each other's point of view which would help lead to smaller discrepancy in ratings. 
+Some raters may perform better than others could be due to a myriad of factors like background and personal preferences.
+
+##Step 5
+1. What is the F1 score for each rater for 3-label ratings? For 5 label ratings?
+2. What is the MCC score for each rater for 3-label ratings? For 5 label ratings?
+3. What is the average rating made by raters for each, three label ratings and five label ratings, compared to the ratings made by engineers? Given that the ratings are numbered {Low: 1, Average: 2, High: 3}, and {Bad:1, Okay:2, Intermediate:3, Great:4, Exceptional:5}.
+
+## Step 6
+```
+SELECT `Rater Column`, (AVG(`Three Label Agreement`)+AVG(`Five Label Agreement`))/2 
+FROM df 
+WHERE `Date Column` = '10-06-05' 
+GROUP BY `Rater Column`
+```
+  Rater Column | Agreement Rates
+  ---------- | ----------
+            A       |                                    0.242857           
+            B       |                                    0.250000           
+            C       |                                    0.219697           
+            D      |                                     0.306667           
+            E       |                                    0.246377 
