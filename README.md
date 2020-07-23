@@ -36,7 +36,15 @@ df['Three Label Agreement'] = df['Correct Answer 3 Label'] == df['Rater Answer 3
 df['Five Label Agreement'] = df['Correct Answer 5 Label'] == df['Rater Answer 5 Label']
 ```
 ### Resulting Table
-!()
+Displays first 5 rows
+
+Date Column	|Rater Column|	Correct Answer 3 Label	|Correct Answer 5 Label|	Rater Answer 3 Label|	Rater Answer 5 Label|	Task ID	|Three Label Agreement|	Five Label Agreement
+------------ | ------------- |------------ | ------------- |------------ | ------------- |------------ | ------------- |------------
+10-17-05|	B|	Average|	Intermediate|	Low|	Okay|	1|	False|	False
+10-29-05|	A|	High|	Bad|	Average|	Bad|	2|	False|	True
+10-21-05|	A|	Average|	Intermediate|	Average|	Exceptional|	3|	True|	False
+10-17-05|	C|	Average|	Bad|	Low|	Intermediate|	4|	False|	False
+10-01-05|	C|	Average|	Great|	Average|	Bad|	5|	True|	False
 ## Step 4
 
 ### 1. What is the agreement rate between the engineer and all the raters for each day?
