@@ -183,7 +183,7 @@ recall_okay = (ratings_grouped.loc[(ratings_grouped.index == "Okay")]['Five Labe
 pd.DataFrame(index = ['Bad', 'Exceptional', 'Great', 'Intermediate', 'Okay'], 
              data = [recall_bad, recall_exceptional, recall_great, recall_intermediate, recall_okay ],
             columns = ['Recall'])
-	
+```	
 Rater Answer 5 Label |Recall
 ---------- | ----------
 Bad	|0.217192
